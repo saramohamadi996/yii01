@@ -1,0 +1,31 @@
+sudo apt-get purge `dpkg -l | grep mysql| awk '^Crint $2}' |tr "\n" " "`
+sudo netstat -tulpn | grep -E ':(80|443)'
+sudo apache2ctl configtest
+sudo tail -30 /var/log/apache2/error.log
+
+sudo chown -R mysql:mysql /var/run/mysqld
+
+composer create-project --prefer-dist yiisoft/yii2-app-basic yii01 --ignore-platform-reqs
+composer create-project --prefer-dist yiisoft/yii2-app-basic yii01 -vvv
+
+chown -R www-data:www-data /var/www/html
+
+
+systemctl stop systemd-resolved
+systemctl mask systemd-resolved
+rm /etc/resolv.conf
+cat <<EOF > /etc/resolv.conf
+nameserver 10.202.10.202
+nameserver 10.202.10.102
+EOF 
+
+با اطلاعات حساب root خود لاگین کنید.
+-	فایل /etc/sysctl.conf را با کامند زیر باز کنید:
+$ sudo vim /etc/sysctl.conf
+-	این لاین‌ها را به آن اضافه کنید:
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+-	حالا فایل را سیو و کامپیوتر خود را با این کامند reboot کنید:
+$ sudo reboot
+-	در نهایت با اجرا کردن این کامند غیرفعال شدن ipv6 را تایید کنید:
+$ ip a | grep inet6

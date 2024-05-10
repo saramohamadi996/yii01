@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  ava-php:
+    build:
+      context: .
+      dockerfile: apache.dockerfile
+    container_name: ava-php
+    restart: always
+    ports:
+      - "8099:80"
+    volumes:
+      - ./yii01:/var/www/html
+      - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./logs/apache:/var/log/apache2
+    depends_on:
+      - ava-mariadb
+
+  # MariaDB Service
+  ava-mariadb:
+    image: mariadb:10
+    container_name: ava-mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "33064:3306"
+    volumes:
+      - ava_mariadb:/var/lib/mysql
+      - ./dbs:/docker-entrypoint-initdb.d
+      - ./mariadb/my.cnf:/etc/mariadb/mariadb.conf.d/my.cnf
+
+  # phpMyAdmin Service
+  ava-phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: ava-phpmyadmin
+    environment:
+      PMA_HOST: ava-mariadb
+      MYSQL_ROOT_PASSWORD: password
+    restart: always
+    ports:
+      - "8084:80"
+
+  # Redis Service
+  ava-redis:
+    image: redis:latest
+    container_name: ava-redis
+    restart: always
+    volumes:
+      - ./redis/data:/data
+    ports:
+      - "6366:6379"
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  ava_mariadb:
+    driver: local

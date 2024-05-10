@@ -1,0 +1,7 @@
+/vendor/
+vendor
+.env
+bootstrap/cache/
+composer.lock
+database/.gitignore
+storage/framework/

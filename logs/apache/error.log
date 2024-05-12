@@ -85,3 +85,6 @@ AH00112: Warning: DocumentRoot [/var/www/html/web] does not exist
 [Fri May 10 07:48:25.258959 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
 [Fri May 10 07:49:23.026427 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/7.4.33 configured -- resuming normal operations
 [Fri May 10 07:49:23.026562 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Fri May 10 19:37:51.528041 2024] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Sun May 12 17:06:19.277326 2024] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/7.4.33 configured -- resuming normal operations
+[Sun May 12 17:06:19.279337 2024] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'

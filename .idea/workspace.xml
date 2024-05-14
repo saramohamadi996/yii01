@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc761d37-cadf-40df-bd78-247f0dd99fda" name="Changes" comment="repo">
-      <change afterPath="$PROJECT_DIR$/yii01/backend/components/ApiCaller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii01/backend/controllers/TenantController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii01/backend/models/Tenant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii01/backend/views/tenant/create.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii01/backend/views/tenant/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yii01/backend/views/tenant/view.php" afterDir="false" />
+    <list default="true" id="bc761d37-cadf-40df-bd78-247f0dd99fda" name="Changes" comment="repo9sfs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/apache/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/apache/access.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/apache/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/apache/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redis/data/dump.rdb" beforeDir="false" afterPath="$PROJECT_DIR$/redis/data/dump.rdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/components/ApiCaller.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/components/ApiCaller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/controllers/TenantController.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/models/Tenant.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/models/Tenant.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/views/tenant/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/views/tenant/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/views/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/backend/views/tenant/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/backend/views/user/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yii01/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/yii01/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -296,7 +296,7 @@
     &quot;JavaScript Debug.QuestionRepositoryInterface.php.executor&quot;: &quot;Coverage&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/sara/Desktop/mashq/pro-test/CheckHostsStatus&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sara/Desktop/mashq/pro-test/yii01&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -401,6 +401,12 @@
       <workItem from="1715357200882" duration="1936000" />
       <workItem from="1715445362016" duration="2040000" />
       <workItem from="1715532082623" duration="3908000" />
+      <workItem from="1715540937653" duration="96000" />
+      <workItem from="1715618993072" duration="55000" />
+      <workItem from="1715619059290" duration="524000" />
+      <workItem from="1715625283617" duration="4700000" />
+      <workItem from="1715706096576" duration="81000" />
+      <workItem from="1715710305039" duration="2237000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -594,7 +600,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715449642499</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="repo9">
+      <option name="closed" value="true" />
+      <created>1715540992933</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715540992933</updated>
+    </task>
+    <task id="LOCAL-00026" summary="repo9sfs">
+      <option name="closed" value="true" />
+      <created>1715629980729</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1715629980730</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,6 +644,8 @@
     <MESSAGE value="add request types ططcrud" />
     <MESSAGE value="init" />
     <MESSAGE value="repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="repo" />
+    <MESSAGE value="repo9" />
+    <MESSAGE value="repo9sfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="repo9sfs" />
   </component>
 </project>

@@ -39,6 +39,54 @@ class ProductController extends Controller
 //        }
 //        return $this->render('create', ['model' => $model]);
 //    }
+    public function actionUpdate($id)
+    {
+        $request = Yii::$app->request;
+        $name = $request->post('name');
+        $model = [
+            'name' => $name,
+        ];
+        $currentData = $this->getDataFromApi($id);
+        if ($currentData === false) {
+            Yii::$app->session->setFlash('error', 'Failed to fetch current data from the API.');
+            return $this->redirect(['index', 'dev_id' => $id]);
+        }
+        $updatedData = array_merge($currentData, $model);
+        try {
+            $jsonData = json_encode($updatedData);
+            Yii::error("JSON being sent: " . $jsonData);
+            $response = ApiCaller::call('PUT', 'https://172.16.14.190:4000/api/confd/1.0/tenants', $jsonData, [
+                'Content-Type: application/json; charset=UTF-8',
+                'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNTY5MjYzNn0.HwgGDet7BYGBNf2hHyLAToRFLibv9wWYbTRxdeWGNvc',
+                'Accept: */*'
+            ]);
+            $result = json_decode($response, true);
+            if ($result) {
+                Yii::$app->session->setFlash('success', 'Updated successfully.');
+                return $this->redirect(['index', 'dev_id' => $dev_id]);
+            } else {
+                Yii::$app->session->setFlash('error', 'Failed to update the device.');
+            }
+        } catch (\Exception $e) {
+            Yii::error("Failed to call API: " . $e->getMessage(), METHOD);
+            Yii::$app->session->setFlash('error', 'API call failed: ' . $e->getMessage());
+        }
+        return $this->render('_form.php', [
+            'model' => $model,
+        ]);
+    }
+
+    private function getDataFromApi($id)
+    {
+        try {
+            var_dump( ApiCaller::call('GET', 'http://localhost:8072/api/users/' . $id));die();
+            $response = ApiCaller::call('GET', 'http://localhost:8072/api/users/' . $id);
+            return json_decode($response, true);
+        } catch (\Exception $e) {
+            Yii::error("Failed to fetch data from API: " . $e->getMessage());
+            return false;
+        }
+    }
 
 
     public function actionCreate()
@@ -87,7 +135,7 @@ class ProductController extends Controller
 //        return $this->render('create', ['model' => $model]);
 //    }
 
-    public function actionUpdate($id)
+    public function actioUpdate($id)
     {
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {

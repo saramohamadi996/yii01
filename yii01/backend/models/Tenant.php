@@ -8,7 +8,7 @@ class Tenant extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'tenant';
+        return 'user';
     }
 
     public function rules()

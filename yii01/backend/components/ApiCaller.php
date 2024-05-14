@@ -6,10 +6,9 @@ class ApiCaller
 {
     public static function call($method, $url, $data = null, $headers = []) {
         $curl = curl_init();
-
         switch ($method) {
             case "POST":
-                curl_setopt($curl, CURLOPT_POST, true);
+                curl_setopt($curl, CURLOPT_POST, $data);
                 if ($data) {
                     curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
                 }
@@ -38,6 +37,7 @@ class ApiCaller
         }
 
         curl_close($curl);
+//        var_dump($result);die();
 
         return $result;
     }
